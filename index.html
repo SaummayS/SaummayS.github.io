@@ -41,6 +41,8 @@
 <script>
  projects.forEach((project) => {
 
+    if(project.display){
+
     let clone = document.querySelector(".template").cloneNode(true)
 
     clone.querySelector(".mdc-card__media-content").innerText = project.name
@@ -49,7 +51,7 @@
     
     clone.classList.remove("template")
 
-    document.body.append(clone);
+    document.body.append(clone);}
 
      
  });
