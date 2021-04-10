@@ -1,1 +1,59 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+      .template{display:none;}
+  </style>
+</head>
+<body>
+
+<div class="mdc-card template">
+    <div class="mdc-card__primary-action">
+      <div class="mdc-card__media mdc-card__media--square">
+        <div class="mdc-card__media-content">Title</div>
+      </div>
+      <!-- ... additional primary action content ... -->
+    </div>
+    <div class="mdc-card__actions">
+      <div class="mdc-card__action-buttons">
+        <button class="mdc-button mdc-card__action mdc-card__action--button">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Action 1</span>
+        </button>
+        <button class="mdc-button mdc-card__action mdc-card__action--button">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Action 2</span>
+        </button>
+      </div>
+      <div class="mdc-card__action-icons">
+        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
+      </div>
+    </div>
+  </div>
+
+<script src="projects.js"></script>
+
+<script>
+ projects.array.forEach((project) => {
+
+    let clone = document.querySelector(".template").cloneNode(true)
+
+    clone.querySelector(".mdc-card__media-content").innerText = project.name
+    clone.querySelectorAll(".mdc-button__label")[0].innerText = "View Page"
+    clone.querySelectorAll(".mdc-button__label")[1].innerText = "View Repo"
+    
+    clone.classList.remove("template")
+
+    document.body.append(clone);
+
+     
+ });
+</script>
+
+</body>
+</html> 
