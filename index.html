@@ -6,8 +6,19 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <style>
+      .my-card-content {
+      padding: 16px;
+      }
+  .my-card {
+  height: 350px;
+  width: 350px;
+}
       .template{display:none;}
+
   </style>
+  <h1>SAUMMAY SINGHAL</h1>
+  <h4>9911XX9911 | UNIVERSITY OF ILLINOIS | CHICAGO, IL</h4>
+
 </head>
 <body>
 
@@ -45,9 +56,11 @@
 
     let clone = document.querySelector(".template").cloneNode(true)
 
-    clone.querySelector(".mdc-card__media-content").innerText = project.name
-    clone.querySelectorAll(".mdc-button__label")[0].innerText = "View Page"
-    clone.querySelectorAll(".mdc-button__label")[1].innerText = "View Repo"
+    clone.querySelector(".mdc-card__media-content").innerText = project.name + "\n\n\n" + project.tech + "\n\n" + project.desc 
+
+    clone.querySelectorAll(".mdc-card__media").src = project.img
+    clone.querySelectorAll(".mdc-button__label")[0].innerText = project.url_to_page
+    clone.querySelectorAll(".mdc-button__label")[1].innerText = project.url_to_repo
     
     clone.classList.remove("template")
 
